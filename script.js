@@ -1,5 +1,0 @@
-console.log("hello")
-console.log("asd")
-console.log("asd")
-console.log("aaaaaad")
-console.log("llkkll")
