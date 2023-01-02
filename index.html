@@ -1,12 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <body>
-    <header>
-      <h1>Numbers</h1>
-    </header>
-    <form action="/" method="POST">
-        <label>Numbers</label>
 
-        <input type="number" id = "name" name="name">
-   
-        <button type ="submit">Submit</button>
 
-    </form>
+    
+          <!-- <h1>Numbers</h1>
+        </header>
+        <form action="/" method="POST">
+            <label>Numbers</label>
+    
+            <input type="number" id = "name" name="name">
+       
+            <button type ="submit">Submit</button>
+    
+        </form>
+        <h1>Hello, my name is <span id="intArr"></span></h1>
+        <script type="text/javascript">
+            let intArr1 = intArr;
+            document.getElementById("intArr").innerHTML = intArr;
+            document.write(intArr);
+        </script> -->
+
+<body>
+
+
+  <button onclick="getData()">Fetch Data</button>
+
+<p id="display"></p>
+<script>
+
+  
+  function getData(){
+    fetch('http://192.168.31.212/submit')
+    .then(res=> res.json())
+    .then((data) => {
+      display.innerText = data.message;
+    })
+    // .then(res=> console.log(res))
+    // .catch(err=> console.log(err))
+  }
+</script>
+</body>
+</html>

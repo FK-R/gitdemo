@@ -2,14 +2,15 @@ const express = require('express');
 const app = express();
 const path = require('path');
 app.use(express.urlencoded());
+app.get('/',(req,res)=>{
 
+res.sendFile(path.join(__dirname+'/index.html'))
 
-app.get('/',function(req,res){
-  res.sendFile(path.join(__dirname+'/index.html'));
-res.render("/index.html", {intArr:'intArr'});
+})
 
-  
-
+app.get('/submit',function(req,res){
+ 
+  res.json({'message':'hello'})
 });
 
 
@@ -28,6 +29,6 @@ app.post('/',(req,res)=>{
 
 
 
-app.listen(process.env.port || 3000);
+app.listen(process.env.port || 5000);
 
-console.log('Running at Port 3000');
+console.log('Running at Port 5000');
